@@ -1,4 +1,19 @@
-.tab-active{
-    background-color: #44be62!important;
-    border-bottom: 3px solid #212529!important;
+.vertical-grid {
+  display: grid;
+  grid-template-columns: 0.3fr 1.7fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: ". .";
+}
+.nav-link {
+  color: #fff !important;
+  text-align: center;
+}
+.vertical-navbar {
+  background-color: #202936;
+  height: 100vh;
+}
+
+.btn-outline-success {
+  color: #fff !important;
 }

@@ -14,18 +14,18 @@ function Window(props) {
     <>
       <div className="modal-button">
         <Button
-          variant="primary"
+          variant="outline-success"
           onClick={handleShow}
           size={props.size}
         >
-          {props.button}
+          {props.title}
         </Button>
       </div>
       <Modal
         show={show}
         onHide={handleClose}
         backdrop="static"
-        size="sm"
+        size="md"
         aria-labelledby="contained-modal-title-vcenter"
         keyboard={false}
         centered
