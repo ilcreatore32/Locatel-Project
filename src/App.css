@@ -17,3 +17,32 @@
 .btn-outline-success {
   color: #fff !important;
 }
+
+.profile-grid{
+  display: grid; 
+  grid-template-columns: 0.7fr 1.3fr; 
+  grid-template-rows: 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". .";
+}
+
+.app-view{
+  background-color: #f6f8fa;
+}
+
+.profile-details{
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.profile-activity{
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}

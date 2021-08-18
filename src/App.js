@@ -42,7 +42,7 @@ function App() {
           </Navbar.Brand>
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text>
-              <Window title="Crear una Solicitud">
+              <Window title="Crear una Solicitud" variant="outline-success">
                 <Request />
               </Window>
             </Navbar.Text>
@@ -77,20 +77,20 @@ function App() {
                 <NavLink
                   className="nav-link"
                   activeClassName="tab-active"
-                  to="/plplp"
+                  to="/history"
                 >
-                  Link 2
+                  Historial de Solicitudes
                 </NavLink>
               </div>
             </Nav>
           </div>
-          <Switch>
-            <Container>
+          <Container className="app-view">
+            <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/Profile" component={Profile} />
-              {/* <Route path='*' component={NoMatch} /> */}
-            </Container>
-          </Switch>
+              <Route path="*" component={NoMatch} />
+            </Switch>
+          </Container>
         </div>
       </Router>
     </>

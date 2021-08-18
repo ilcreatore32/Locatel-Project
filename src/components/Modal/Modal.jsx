@@ -12,9 +12,9 @@ function Window(props) {
 
   return (
     <>
-      <div className="modal-button">
+      <div className="modal-button"> 
         <Button
-          variant="outline-success"
+          variant={props.variant}
           onClick={handleShow}
           size={props.size}
         >
