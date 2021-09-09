@@ -1,0 +1,10 @@
+.error{
+    color: rgba(255, 71, 80, 0.856);
+    margin: 0;
+    text-indent: 1rem;
+}
+
+.request-form-input:focus {
+    border-color: #77e28085 !important;
+    box-shadow: 0 0 0 0.25rem rgb(165 247 217 / 22%) !important;
+}

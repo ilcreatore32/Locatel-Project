@@ -1,14 +1,19 @@
 import React from "react";
+import "./NoMatch.css";
+
+/* React-Router */
 import { useLocation } from "react-router-dom";
 
 function NoMatch() {
   let location = useLocation();
   return (
     <>
-      <h1>Error 404</h1>
-      <h3>
-        No match for <code>{location.pathname}</code>
-      </h3>
+      <div className="error-view">
+        <h2>Error 404</h2>
+        <h3>
+          No match found for <code>{location.pathname}</code>
+        </h3>
+      </div>
     </>
   );
 }

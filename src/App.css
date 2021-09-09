@@ -1,48 +1,38 @@
-.vertical-grid {
-  display: grid;
-  grid-template-columns: 0.3fr 1.7fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-template-areas: ". .";
+html,
+body {
+  margin: 0px;
+  height: 100%;
+  font-family: "Lato", sans-serif !important;
 }
-.nav-link {
-  color: #fff !important;
-  text-align: center;
+
+p{
+  margin-bottom: 0;
 }
-.vertical-navbar {
-  background-color: #202936;
-  height: 100vh;
+
+#root {
+  background-color: #f5fff9;
+  height: 100%;
 }
 
 .btn-outline-success {
   color: #fff !important;
 }
 
-.profile-grid{
-  display: grid; 
-  grid-template-columns: 0.7fr 1.3fr; 
-  grid-template-rows: 1fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
-    ". .";
-}
-
 .app-view{
-  background-color: #f6f8fa;
+  padding: .1rem;
 }
 
-.profile-details{
-  margin: 1rem;
-  padding: 1rem;
-  border-radius: 10px;
-  background-color: #fff;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+.btn-submit{
+  float: right !important;
 }
 
-.profile-activity{
-  margin: 1rem;
-  padding: 1rem;
-  border-radius: 10px;
-  background-color: #fff;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+@media only screen and (max-width: 600px) {
+  .cards-container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    align-content: center !important;
+    flex-wrap: nowrap !important;
+    flex-direction: column !important;
+  }
 }

@@ -3,95 +3,44 @@ import "./App.css";
 
 /* Pages */
 import Home from "./pages/Home/Home";
+import Login from "./pages/Login/Login";
+import SignUp from "./pages/SignUp/SignUp";
 import Profile from "./pages/Profile/Profile";
+import Departments from "./pages/Departments/Deparments";
+import Users from './pages/Users/Users';
 import NoMatch from "./pages/NoMatch/NoMatch";
 
 /* Components */
-import Request from "./components/Request/Request";
-import Window from "./components/Modal/Modal";
+import Navbar from "./components/Navigation/Navbar";
+import NavMenu from "./components/Navigation/NavMenu";
 
-/* React- Bootstrap */
-import Navbar from "react-bootstrap/Navbar";
+/* React-Bootstrap */
 import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
 
 /* React-Router */
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  NavLink,
+  Route
 } from "react-router-dom";
-
-import logo from "./assets/images/logo.png";
 
 function App() {
   return (
     <>
-      <Navbar bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand href="/">
-            <img
-              alt="Logo"
-              src={logo}
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
-            />{" "}
-            Proyecto Locatel
-          </Navbar.Brand>
-          <Navbar.Collapse className="justify-content-end">
-            <Navbar.Text>
-              <Window title="Crear una Solicitud" variant="outline-success">
-                <Request />
-              </Window>
-            </Navbar.Text>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-
+      <Navbar />
       <Router>
-        <div className="vertical-grid">
-          <div className="vertical-navbar">
-            <Nav className="flex-column">
-              <div className="link">
-                <NavLink
-                  className="nav-link"
-                  activeClassName="tab-active"
-                  to="/"
-                  exact
-                >
-                  Inicio
-                </NavLink>
-              </div>
-              <div className="link">
-                <NavLink
-                  className="nav-link"
-                  activeClassName="tab-active"
-                  to="/Profile"
-                >
-                  Perfil
-                </NavLink>
-              </div>
-              <div className="link">
-                <NavLink
-                  className="nav-link"
-                  activeClassName="tab-active"
-                  to="/history"
-                >
-                  Historial de Solicitudes
-                </NavLink>
-              </div>
-            </Nav>
-          </div>
-          <Container className="app-view">
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/Profile" component={Profile} />
-              <Route path="*" component={NoMatch} />
-            </Switch>
-          </Container>
-        </div>
+        <NavMenu />
+        <Container className="app-view">
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/Login" component={Login} />
+            <Route path="/SignUp" component={SignUp} />
+            <Route path="/Profile/:Id" component={Profile} />
+            <Route path="/Departments" component={Departments} />
+            <Route path="/Users" component={Users} />
+            <Route path="*" component={NoMatch} />
+          </Switch>
+        </Container>
       </Router>
     </>
   );

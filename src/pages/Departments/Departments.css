@@ -1,0 +1,89 @@
+.departments-view {
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.departments-list {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.departments-list-item {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.departments-list-item button {
+  margin: 0.5rem;
+}
+
+.departments-list-item .buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.departments-list-item button span {
+  margin: 0 0.5rem;
+}
+
+.departments-panel {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 2rem;
+}
+
+.btn-group-sm > .btn,
+.btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.815rem;
+  border-radius: 0.2rem;
+  width: 8em;
+}
+
+.cod{
+  width: 3rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .departments-panel {
+    display: flex !important;
+    flex-direction: column !important;
+    align-content: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0.5rem 2rem !important;
+    gap: 10px !important;
+    flex-wrap: nowrap !important;
+  }
+  .departments-list-item .buttons {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .departments-list-item {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+}

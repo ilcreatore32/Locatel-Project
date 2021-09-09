@@ -1,0 +1,89 @@
+.users-view {
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.users-list {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.users-list-item {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.users-list-item button {
+  margin: 0.5rem;
+}
+
+.users-list-item button span {
+  margin: 0 0.5rem;
+}
+
+.users-panel {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 2rem;
+}
+
+.user-id {
+  font-style: italic;
+}
+
+.user-id code {
+  color: #20c997;
+}
+
+@media only screen and (max-width: 600px) {
+  .users-panel {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem 2rem;
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .users-list-item {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .users-list-item .buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .users-list-item .buttons {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
