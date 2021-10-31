@@ -8,3 +8,8 @@
     border-color: #77e28085 !important;
     box-shadow: 0 0 0 0.25rem rgb(165 247 217 / 22%) !important;
 }
+
+.flex-inputs{
+    display:flex !important;
+    gap: 1rem !important;
+}

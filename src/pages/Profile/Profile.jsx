@@ -1,56 +1,37 @@
 import React from "react";
-import { useEffect, useState } from "react";
 import profileImage from "./profile.jpg";
 import "./Profile.css";
-
-/* Services */
-import api from "../../services/ApiConfig";
-
-/* React-Router */
-import { useParams } from "react-router-dom";
 
 /* React-Bootstrap */
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 
 function Profile() {
-  const [user, setUser] = useState([]);
-  var { Id } = useParams();
-
-  useEffect(() => {
-    const userId = Id;
-    api
-      .get("Users/"+ userId)
-      .then((result) => {
-        let Data = result.data.data;
-        setUser(Data);
-      })
-      .catch(console.log);
-  }, [Id]);
-
+  var authUser = JSON.parse(localStorage.getItem("user"));
+  console.log(authUser);
   return (
     <>
       <Container>
         <div className="profile-grid">
           <div className="profile-details">
             <Image src={profileImage} roundedCircle />
-            <h2>{`${user.name} ${user.lastName}`}</h2>
-            <span className="lead">{`${user.idDepartment} - Extension`}</span>
+            <h2>{`${authUser.name} ${authUser.lastName}`}</h2>
+            <span className="lead">{`${authUser.idDepartment} - Extension`}</span>
           </div>
           <div className="profile-activity">
             <div>
               <ul>
                 <li>
                   <h6>Nombre</h6>
-                  <span>{`${user.name} ${user.lastName}`}</span>
+                  <span>{`${authUser.name} ${authUser.lastName}`}</span>
                 </li>
                 <li>
                   <h6>Departamento</h6>
-                  <span>{`${user.idDepartment}`}</span>
+                  <span>{`${authUser.idDepartment}`}</span>
                 </li>
                 <li>
                   <h6>Correo</h6>
-                  <span>{`${user.email}`}</span>
+                  <span>{`${authUser.email}`}</span>
                 </li>
                 <li>
                   <h6>Extensión</h6>
@@ -62,9 +43,9 @@ function Profile() {
         </div>
         <div className="profile-activity text-center">
           <h3>Estadisticas de Solicitudes</h3>
-          <h6>Total de Solicitudes = {user.totalRequest}</h6>
-          <h6>Solicitudes Solucionadas= {user.trueRequest}</h6>
-          <h6>Solicitudes No Solucionadas = {user.falseRequest}</h6>
+          <h6>Total de Solicitudes = {authUser.totalRequest}</h6>
+          <h6>Solicitudes Solucionadas= {authUser.trueRequest}</h6>
+          <h6>Solicitudes No Solucionadas = {authUser.falseRequest}</h6>
         </div>
       </Container>
     </>

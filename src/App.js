@@ -35,7 +35,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route path="/Login" component={Login} />
             <Route path="/SignUp" component={SignUp} />
-            <Route path="/Profile/:Id" component={Profile} />
+            <Route path="/Profile" component={Profile} />
             <Route path="/Departments" component={Departments} />
             <Route path="/Users" component={Users} />
             <Route path="*" component={NoMatch} />

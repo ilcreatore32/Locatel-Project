@@ -12,13 +12,12 @@ import Button from "react-bootstrap/Button";
 import { useFormik } from "formik";
 
 function Request() {
-  const handleFile = (event) => {
-    console.log(event.currentTarget.files[0]);
-  };
+  var authUser = JSON.parse(localStorage.getItem("user"));
 
   const initialValues = {
-    dpto: 0,
-    idUser: 10019,
+    dpto: authUser.idDepartment,
+    idUser: authUser.id,
+    name: authUser.name,
     problem: "",
     file: "",
     solution: "",
@@ -71,6 +70,8 @@ function Request() {
             className="request-form-input"
             aria-label="Departamento"
             name="dpto"
+            readOnly
+            value={formik.values.dpto}
             onChange={formik.handleChange}
           >
             <option>Seleccione un Dpto.</option>
@@ -91,18 +92,28 @@ function Request() {
         ) : null}
 
         <Form.Group className="mb-3">
-          <Form.Label>Solicitante</Form.Label>
-          <Form.Control
-            className="request-form-input"
-            name="idUser"
-            type="number"
-            readOnly
-            placeholder={initialValues.idUser}
-            onChange={formik.handleChange}
-            value={formik.values.idUser}
-          />
+          <Form.Label>Creador</Form.Label>
+          <div className="flex-inputs">
+            <Form.Control
+              className="request-form-input"
+              name="idUser"
+              type="number"
+              readOnly
+              placeholder={initialValues.idUser}
+              onChange={formik.handleChange}
+              value={formik.values.idUser}
+            />
+            <Form.Control
+              className="request-form-input"
+              name="name"
+              type="text"
+              readOnly
+              placeholder={initialValues.name}
+              onChange={formik.handleChange}
+              value={formik.values.name}
+            />
+          </div>
         </Form.Group>
-
         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
           <Form.Label>Describa su Problema</Form.Label>
           <Form.Control
@@ -116,17 +127,6 @@ function Request() {
           {formik.errors.problem ? (
             <div className="error">* {formik.errors.problem}</div>
           ) : null}
-        </Form.Group>
-        <Form.Group controlId="formFileMultiple" className="mb-3">
-          <Form.Label>Capturas</Form.Label>
-          <Form.Control
-            className="request-form-input"
-            name="file"
-            type="file"
-            multiple
-            onChange={handleFile}
-            value={formik.values.file}
-          />
         </Form.Group>
         <Button className="btn-submit" variant="success" type="submit">
           Crear Solicitud

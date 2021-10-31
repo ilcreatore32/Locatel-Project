@@ -1,3 +1,15 @@
-.modal-btn-icon{
-    margin-left: .5rem !important;
+.modal-btn-icon {
+  margin-left: 0.5rem !important;
+}
+
+.modal-button {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  padding: .2rem;
+}
+
+.search:focus {
+    border-color: #77e28085 !important;
+    box-shadow: 0 0 0 0.25rem rgb(165 247 217 / 22%) !important;
 }
